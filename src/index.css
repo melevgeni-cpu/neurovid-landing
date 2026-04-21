@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 md:px-6;
+  }
+}
+
+.portfolio-swiper .swiper-pagination-bullet {
+  background-color: #a5b4fc;
+  opacity: 0.5;
+}
+
+.portfolio-swiper .swiper-pagination-bullet-active {
+  background-color: #4f46e5;
+  opacity: 1;
+}
+
+.dark .portfolio-swiper .swiper-pagination-bullet {
+  background-color: #6366f1;
+}
+
+.dark .portfolio-swiper .swiper-pagination-bullet-active {
+  background-color: #818cf8;
+}
+
+.portfolio-swiper .swiper-button-prev,
+.portfolio-swiper .swiper-button-next {
+  color: #4f46e5;
+  transform: scale(0.75);
+}
+
+.dark .portfolio-swiper .swiper-button-prev,
+.dark .portfolio-swiper .swiper-button-next {
+  color: #818cf8;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #4f46e5, 0 0 0 4px #ffffff;
+}
+
+.dark *:focus-visible {
+  box-shadow: 0 0 0 2px #818cf8, 0 0 0 4px #0f172a;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

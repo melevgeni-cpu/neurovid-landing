@@ -6,7 +6,6 @@ import { Play } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export const Portfolio: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [videoLoadingStates, setVideoLoadingStates] = useState<Record<number, boolean>>({});
 
   const projects = [

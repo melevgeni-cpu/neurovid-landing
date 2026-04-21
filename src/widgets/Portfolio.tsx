@@ -64,7 +64,10 @@ export const Portfolio: React.FC = () => {
             slidesPerView={1}
             pagination={{ clickable: true }}
             navigation
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+            onSlideChange={(swiper) => {
+              // activeIndex больше не используется, но swiper.activeIndex доступен если понадобится
+              console.log(swiper.activeIndex);
+            }}
             className="portfolio-swiper"
           >
             {projects.map((project) => (
